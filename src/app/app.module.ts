@@ -8,6 +8,7 @@ import { BlogViewComponent } from './blog-view/blog-view.component';
 import { BlogCreateComponent } from './blog-create/blog-create.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { AboutComponent } from './about/about.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AboutComponent } from './about/about.component';
     BlogViewComponent,
     BlogCreateComponent,
     BlogEditComponent,
-    AboutComponent
+    AboutComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,10 @@ import { AboutComponent } from './about/about.component';
       {
         path: 'create',
         component: BlogCreateComponent
+      },
+      {
+        path: '**',
+        component: NotFoundComponent
       }
     ])
   ],
