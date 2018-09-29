@@ -17,7 +17,13 @@ import { BlogEditComponent } from './blog-edit/blog-edit.component';
     BlogEditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {
+        path: 'home',
+        component: HomeComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
