@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { BlogViewComponent } from './blog-view/blog-view.component';
 import { BlogCreateComponent } from './blog-create/blog-create.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BlogEditComponent } from './blog-edit/blog-edit.component';
     HomeComponent,
     BlogViewComponent,
     BlogCreateComponent,
-    BlogEditComponent
+    BlogEditComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +24,27 @@ import { BlogEditComponent } from './blog-edit/blog-edit.component';
       {
         path: 'home',
         component: HomeComponent
+      },
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+      },
+      {
+        path: 'about',
+        component: AboutComponent
+      },
+      {
+        path: 'blog/:blogId',
+        component: BlogViewComponent
+      },
+      {
+        path: 'edit/:blogId',
+        component: BlogEditComponent
+      },
+      {
+        path: 'create',
+        component: BlogCreateComponent
       }
     ])
   ],
