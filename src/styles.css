@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+:root {
+  font-size: 16px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+
+  background: url('https://images.pexels.com/photos/490411/pexels-photo-490411.jpeg') fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
