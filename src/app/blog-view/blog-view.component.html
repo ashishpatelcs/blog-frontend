@@ -1,8 +1,8 @@
-<div class="container box">
+<div *ngIf='currentBlog' class="container box">
   <header>
-    <h2>{{ currentBlog.title }}</h2>
+    <h2 >{{ currentBlog.title }}</h2>
     <span class="subhead"><strong>Posted by: </strong> {{ currentBlog.author }} on {{ currentBlog.lastModified | date }} </span>
-    <div *ngIf='currentBlog.tags.length != undefined && currentBlog.tags.length > 0' class="tags">
+    <div *ngIf='currentBlog.length > 0 && currentBlog.tags.length != undefined && currentBlog.tags.length > 0' class="tags">
       <strong>Tags: </strong>
       <div *ngFor='let tag of currentBlog.tags' class="tag btn-info rounded">
         {{ tag }}
@@ -11,12 +11,12 @@
   </header>
 
   <div class="row-fluid">
-    <img class="header-img image-fluid" src="{{ currentBlog.image }}" alt="hero image" />
+    <img class="header-img image-fluid" src="{{ currentBlog.image || 'https://cdn-images-1.medium.com/max/2000/1*qBNlFWQ9G_RPVm7tbZaXOw.jpeg' }}" alt="hero image" />
   </div>
 
   <section class="content">
-    <p>
-      {{ currentBlog.body }}
-    </p>
+    <p
+      [innerHTML]="currentBlog.bodyHtml"
+    ></p>
   </section>
 </div>>

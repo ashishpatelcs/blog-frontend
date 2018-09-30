@@ -12,7 +12,7 @@
                       <div *ngFor='let blog of allBlogs' class="col-xs-12 col-sm-4">
                           <div class="card">
                               <a class="img-card" [routerLink]="['/blog/'+blog.blogId]">
-                              <img src="{{ blog.image }}" />
+                              <img src="{{ blog.image || 'https://cdn-images-1.medium.com/max/2000/1*qBNlFWQ9G_RPVm7tbZaXOw.jpeg' }}" />
                             </a>
                               <div class="card-content">
                                   <h4 class="card-title">
