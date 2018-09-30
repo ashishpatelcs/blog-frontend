@@ -1,3 +1,22 @@
-<p>
-  blog-view works!
-</p>
+<div class="container box">
+  <header>
+    <h2>{{ currentBlog.title }}</h2>
+    <span class="subhead"><strong>Posted by: </strong> {{ currentBlog.author }} on {{ currentBlog.lastModified | date }} </span>
+    <div *ngIf='currentBlog.tags.length != undefined && currentBlog.tags.length > 0' class="tags">
+      <strong>Tags: </strong>
+      <div *ngFor='let tag of currentBlog.tags' class="tag btn-info rounded">
+        {{ tag }}
+      </div>
+    </div>
+  </header>
+
+  <div class="row-fluid">
+    <img class="header-img image-fluid" src="{{ currentBlog.image }}" alt="hero image" />
+  </div>
+
+  <section class="content">
+    <p>
+      {{ currentBlog.body }}
+    </p>
+  </section>
+</div>>

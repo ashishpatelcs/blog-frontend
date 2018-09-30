@@ -1,0 +1,25 @@
+header {
+  width: 100%;
+  padding: 20px;
+}
+
+.header-img {
+  width: 100%;
+  margin: auto;
+}
+
+section.content {
+  font-size: 1.2em;
+  padding: 50px;
+}
+
+.container {
+  padding: 0px;
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 5px;
+  padding: 1px;
+}

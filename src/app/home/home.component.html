@@ -1,10 +1,43 @@
 <div class="container box">
-  <div class="header">
-    <h2>Blog Posts</h2>
-  </div>
   <section class="content">
-    <p>
-      Here are the latest blog posts.
-    </p>
+    <div *ngFor='let blog of allBlogs' class='card'>
+
+    </div>
+  </section>
+  <section class="wrapper">
+      <div class="container-fostrap">
+          <div>
+              <h1 class="heading">
+                  All Blog Posts
+              </h1>
+          </div>
+          <div class="content">
+              <div class="container">
+                  <div class="flexrow">
+                      <div *ngFor='let blog of allBlogs' class="col-xs-12 col-sm-4">
+                          <div class="card">
+                              <a class="img-card" [routerLink]="['/blog/'+blog.blogId]">
+                              <img src="{{ blog.image }}" />
+                            </a>
+                              <div class="card-content">
+                                  <h4 class="card-title">
+                                      <a [routerLink]="['/blog/'+blog.blogId]"> {{ blog.title | uppercase }}
+                                    </a>
+                                  </h4>
+                                  <p class="">
+                                      {{ blog.body }}
+                                  </p>
+                              </div>
+                              <div class="card-read-more">
+                                  <a [routerLink]="['/blog/'+blog.blogId]" class="btn btn-link btn-block">
+                                      Read More
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </section>
 </div>
