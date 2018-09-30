@@ -27,6 +27,10 @@ export class BlogHttpService {
     return this.http.post(this.APIURL + '/create' + this.authToken, blogPost);
   }
 
+  editBlogPost(blogPost) {
+    return this.http.put(this.APIURL + '/' + blogPost.blogId + '/edit' + this.authToken, blogPost);
+  }
+
   deleteBlogPost(blogId) {
     return this.http.post(this.APIURL + '/' + blogId + '/delete' + this.authToken, {});
   }

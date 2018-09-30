@@ -11,21 +11,21 @@ export class BlogCreateComponent implements OnInit {
   currentBlog = {
     title : '',
     description: '',
-    blogBody: '',
+    bodyHtml: '',
     category: ''
   };
 
   validCategories: Array<string> = ['Comedy', 'Drama', 'Television', 'Technology'];
   response;
 
-  constructor(private blogHttpService: BlogHttpService, private router: Router) { }
+  constructor(private blogHttpService: BlogHttpService, private router: Router) {
+   }
 
   ngOnInit() {
   }
   createPost() {
     this.response = this.blogHttpService.createBlogPost(this.currentBlog).subscribe(
       data => {
-        console.log('post created successfully');
         setTimeout(() => {
           this.router.navigate(['/blog/' + data['data'].blogId]);
         }, 2000);
