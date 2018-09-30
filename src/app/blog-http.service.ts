@@ -23,6 +23,10 @@ export class BlogHttpService {
     return this.http.get(this.APIURL + '/view/' + blogId + this.authToken);
   }
 
+  createBlogPost(blogPost) {
+    return this.http.post(this.APIURL + '/create' + this.authToken, blogPost);
+  }
+
   private HandleError(err: HttpErrorResponse) {
     console.log(err.message);
     return Observable.throw(err.message);

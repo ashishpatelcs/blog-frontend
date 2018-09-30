@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogService } from '../blog.service';
 import { BlogHttpService } from '../blog-http.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-blog-view',
@@ -13,7 +14,7 @@ export class BlogViewComponent implements OnInit {
   public currentBlog;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private _route: ActivatedRoute, private router: Router, private blogService: BlogService, private blogHttpService: BlogHttpService) {
+  constructor(private _route: ActivatedRoute, private router: Router, private blogService: BlogService, private blogHttpService: BlogHttpService, private location: Location) {
 
   }
 
@@ -29,6 +30,19 @@ export class BlogViewComponent implements OnInit {
         console.log(error.errorMessage);
       }
     );
+  }
+
+  deletePost() {
+    this.currentBlog = this.blogHttpService.deleteBlogPost(currentBlog.blogId).subscribe(
+      data => {
+      },
+      error => {
+      }
+    );
+  }
+
+  goBack() {
+    this.location.back();
   }
 
 }

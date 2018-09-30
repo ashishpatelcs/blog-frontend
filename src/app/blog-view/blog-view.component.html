@@ -19,4 +19,10 @@
       [innerHTML]="currentBlog.bodyHtml"
     ></p>
   </section>
+
+  <div class="button-bar">
+    <button type="button" [routerLink]="['/edit/' + currentBlog.blogId]" id="edit" class="btn btn-info">Edit</button>
+    <button type="button" (click)="deletePost()" id="delete" class="btn btn-danger">Delete</button>
+    <button type="button" (click)="goBack()" id="back" class="btn btn-warning">Go Back</button>
+  </div>
 </div>>

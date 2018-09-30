@@ -1,3 +1,49 @@
-<p>
-  blog-create works!
-</p>
+<div class="container box">
+
+  <div id="form">
+      <header>
+          <h1>Create Blog Post</h1>
+      </header>
+
+    <form (ngSubmit)="createPost()" #blogForm="ngForm">
+      <div class="form-group">
+        <label for="title">Blog Title: </label>
+        <input type="text" class="form-control" id="title"
+               required
+               [(ngModel)]="currentBlog.title" name="title"
+               #title="ngModel">
+        <div [hidden]="title.valid || title.pristine"
+             class="alert alert-danger">
+          Title is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description: </label>
+        <input type="text" class="form-control" id="description"
+               [(ngModel)]="currentBlog.description" name="description" required>
+      </div>
+
+      <div class="form-group">
+          <label for="body">Blog Body: </label>
+          <textarea type="text" class="form-control" id="body"
+                 [(ngModel)]="currentBlog.blogBody" name="body" cols="20" rows="10" required></textarea>
+        </div>
+
+      <div class="form-group">
+        <label for="t">Hero Power</label>
+        <select class="form-control" id="power"
+                required
+                [(ngModel)]="currentBlog.category" name="category"
+                #category="ngModel">
+          <option *ngFor="let category of validCategories" [value]="category">{{ category }}</option>
+        </select>
+        <div [hidden]="category.valid || category.pristine" class="alert alert-danger">
+          Category is required.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!blogForm.form.valid">Create</button>
+    </form>
+  </div>
+</div>>
