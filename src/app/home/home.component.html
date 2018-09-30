@@ -1,9 +1,4 @@
 <div class="container box">
-  <section class="content">
-    <div *ngFor='let blog of allBlogs' class='card'>
-
-    </div>
-  </section>
   <section class="wrapper">
       <div class="container-fostrap">
           <div>
@@ -13,7 +8,7 @@
           </div>
           <div class="content">
               <div class="container">
-                  <div class="flexrow">
+                  <div *ngIf="allBlogs.length > 0" class="flexrow">
                       <div *ngFor='let blog of allBlogs' class="col-xs-12 col-sm-4">
                           <div class="card">
                               <a class="img-card" [routerLink]="['/blog/'+blog.blogId]">

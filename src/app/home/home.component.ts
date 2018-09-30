@@ -8,7 +8,7 @@ import { BlogHttpService } from '../blog-http.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private allBlogs;
+  allBlogs;
 
   constructor(private blogService: BlogService, private blogHttpService: BlogHttpService) { }
 
