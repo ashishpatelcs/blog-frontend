@@ -7,7 +7,8 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-blog-view',
   templateUrl: './blog-view.component.html',
-  styleUrls: ['./blog-view.component.css']
+  styleUrls: ['./blog-view.component.css'],
+  providers: [Location]
 })
 export class BlogViewComponent implements OnInit {
 
