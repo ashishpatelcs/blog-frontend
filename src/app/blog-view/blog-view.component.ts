@@ -33,10 +33,12 @@ export class BlogViewComponent implements OnInit {
   }
 
   deletePost() {
-    this.currentBlog = this.blogHttpService.deleteBlogPost(currentBlog.blogId).subscribe(
+    this.currentBlog = this.blogHttpService.deleteBlogPost(this.currentBlog.blogId).subscribe(
       data => {
+        this.router.navigate(['/home']);
       },
       error => {
+        console.log(error.errorMessage);
       }
     );
   }

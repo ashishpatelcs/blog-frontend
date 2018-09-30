@@ -27,6 +27,10 @@ export class BlogHttpService {
     return this.http.post(this.APIURL + '/create' + this.authToken, blogPost);
   }
 
+  deleteBlogPost(blogId) {
+    return this.http.post(this.APIURL + '/' + blogId + '/delete' + this.authToken, {});
+  }
+
   private HandleError(err: HttpErrorResponse) {
     console.log(err.message);
     return Observable.throw(err.message);
