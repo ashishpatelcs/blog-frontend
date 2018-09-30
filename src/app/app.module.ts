@@ -57,4 +57,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  // tslint:disable-next-line:max-line-length
+  // api key: MzE2ODI3YWM1OWRmMTNjYzRjYjEzNzUxZDhkZjUxZGM2Mjk4NGJkNGY2NTJmOWVmNmNlNzc1M2I0NDRkNTk5Yjk1NDQ2ZDZiNzY3MzYyNzFiMWY2ZTAyNWY2ZmRiMzdlNDcwY2QyYzBiMGM4ODEyMTFlZjI5ODA1MTMyMDI0NWZiYw==
+ }
